@@ -1,0 +1,9 @@
+#ignore target under current directory and all subdirectories:
+
+#ignore settings & gitignore file
+*.iml
+*/vcs.xml
+.idea/
+npm-debug.log*
+npm-debug.log
+/node_modules

@@ -1,0 +1,115 @@
+
+* {
+  font-family: "Microsoft YaHei" ! important;
+  /*font-family: "SimSun" ! important;*/
+}
+
+div,h1,h2,h3{
+  margin:0;
+  padding: 0;
+}
+
+input{
+  border-radius: 0;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  margin:0;
+}
+
+/*设置图标字体begin*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('/assets/fonts/survey/iconfont.eot'); /* IE9*/
+  src: url('/assets/fonts/survey/iconfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('/assets/fonts/survey/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('/assets/fonts/survey/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('/assets/fonts/survey/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-research:before {
+  content: "\e606";
+  padding-right: 2px;
+  vertical-align: -2px;
+}
+
+.icon-sign:before {
+  content: "\e62c";
+  padding-right: 2px;
+  vertical-align: -2px;
+}
+
+.icon-name:before {
+  content: "\e611";
+  padding-right: 2px;
+  vertical-align: -2px;
+}
+
+.icon-status-yes:before {
+  content: "\e651";
+  padding-right: 2px;
+  vertical-align: -2px;
+}
+
+.icon-status-no:before {
+  content: "\e677";
+  padding-right: 2px;
+  vertical-align: -2px;
+}
+
+/*设置图标字体end*/
+
+#container{
+  width:100%;
+  height:100%;
+}
+
+#t-header{
+  height:188px;
+  background-color: #91caf9;
+  position: relative;
+  /*outline: blue solid 1px;*/
+}
+
+#t-content{
+  height:100%;
+  margin-bottom: -60px;
+  margin-top: -188px;
+  position: relative;
+  /*outline: pink solid 1px;*/
+}
+
+#t-content-in{
+  height:360px;
+  width:320px;
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  position: absolute;
+}
+
+#t-footer{
+  height:60px;
+  /*outline: red solid 1px;*/
+  background-color: #91caf9;
+}
+
+.sign-name{
+  height:120px;
+  /*outline: red solid 1px;*/
+}

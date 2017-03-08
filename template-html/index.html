@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>会议签到/调查</title>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+</head>
+<body>
+
+<style>
+
+  /*Iphone6 Plus*/
+  #root{ width:414px;height:736px;margin-left:190px}
+
+  /*Iphone6*/
+  /*#root{width:375px;height:667px;}*/
+
+  /*Iphone5*/
+  /*#root{width:320px;height:568px;}*/
+
+
+</style>
+
+<input type="hidden" id="WXUserId" value="{{data.UserId}}"/>
+<input type="hidden" id="WXDeviceId" value="{{data.DeviceId}}"/>
+<input type="hidden" id="signature" value="{{data.signature}}"/>
+<input type="hidden" id="nonceStr" value="{{data.nonceStr}}"/>
+<input type="hidden" id="timestamp" value="{{data.timestamp}}"/>
+<input type="hidden" id="appId" value="{{data.appId}}"/>
+<input type="hidden" id="hasShareMeeting" value="{{data.hasShareMeeting}}"/>
+<input type="hidden" id="shareTitle" value="{{data.shareTitle}}"/>
+<input type="hidden" id="sharer" value="{{data.sharer}}"/>
+<input type="hidden" id="shareStartTime" value="{{data.shareStartTime}}"/>
+<input type="hidden" id="shareEndTime" value="{{data.shareEndTime}}"/>
+<input type="hidden" id="shareId" value="{{data.shareId}}"/>
+<input type="hidden" id="signState" value="{{data.signState}}"/>
+<input type="hidden" id="signTime" value="{{data.signTime}}"/>
+
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: #000 solid 0;
+    }
+
+    table td {
+      border: 1px solid #000;
+      height: 25px;
+      text-align: center;
+      border-left: 0;
+    }
+
+    table th {
+      background: #edd3d4;
+      color: #a10333;
+      border: #000 solid 1px;
+      white-space: nowrap;
+      height: 21px;
+      border-top: 0;
+      border-left: 0;
+    }
+
+    .t_left {
+      width: 30%;
+      height: auto;
+      float: left;
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+    }
+
+    /*t_r_content和cl_freeze高度相差20px， 高度为外观显示高度，可根据情况调整*/
+    .t_r_content {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      overflow: auto;
+    }
+
+    .cl_freeze {
+      height: 200px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    /* width 调整左边标题列宽度（左侧外观显示宽度）; 指定为width:auto 在Opera下显示有问题; height比 t_r_content 高度小20px*/
+    /* width 宽度为 右侧外观显示宽度 实际显示宽度大小为“t_r”宽度加上“cl_freeze”宽度 */
+    /* 如果显示不正常，调整 t_r的width 使其和t_left的width之和小于100%；等于100%时会有问题*/
+    .t_r {
+      width: 100%;
+      height: 700px;
+      float: left;
+      outline: 1px red solid;
+      border-top: 1px solid #000;
+      border-right: #000 solid 1px;
+    }
+
+    .t_r table {
+      width: 1700px;
+    }
+
+    .t_r_title {
+      width: 1720px;
+    }
+
+    /*宽度比 t_r table 大20px （至少大20，小了滚动条滑到右侧显示有问题）*/
+    .t_r_t {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .bordertop {
+      border-top: 0;
+      display: table-cell;
+      width: 200px;
+      word-wrap: break-word;
+      word-break:break-all;
+    }
+  </style>
+  <script>
+    function scrollContent() {
+      var a = document.getElementById("t_r_content").scrollTop;
+      var b = document.getElementById("t_r_content").scrollLeft;
+      document.getElementById("t_r_t").scrollLeft = b;
+      document.getElementById("foot").scrollLeft = b;
+    }
+  </script>
+</head>
+<body>
+
+<div class="t_r">
+
+  <div class="t_r_t" id="t_r_t">
+    <div class="t_r_title">
+      <table>
+        <tr>
+          <th class="bordertop">字段A1</th>
+          <th class="bordertop">字段B2</th>
+          <th class="bordertop">字段C3</th>
+          <th class="bordertop">字段D4</th>
+          <th class="bordertop">字段E5</th>
+          <th class="bordertop">字段F6</th>
+          <th class="bordertop">字段F6</th>
+          <th class="bordertop">字段F6</th>
+          <th class="bordertop">字段F6</th>
+          <th class="bordertop">字段F6</th>
+          <th class="bordertop">字段F6</th>
+          <th class="bordertop">字段F6</th>
+          <th class="bordertop">字段F6</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="t_r_content" id="t_r_content" onscroll="scrollContent()">
+    <table>
+      <tr>
+        <td class="bordertop">111111111111111111111111112222222221111111111111111111111111112222222221</td>
+        <td class="bordertop">111111111111111111111111112222222221111111111111111111111111112222222221</td>
+        <td class="bordertop">111111111111111111111111112222222221111111111111111111111111112222222221</td>
+        <td class="bordertop">111111111111111111111111112222222221111111111111111111111111112222222221</td>
+        <td class="bordertop">1</td>
+        <td class="bordertop">1</td>
+        <td class="bordertop">1</td>
+        <td class="bordertop">1</td>
+        <td class="bordertop">1</td>
+        <td class="bordertop">1</td>
+        <td class="bordertop">1</td>
+        <td class="bordertop">1</td>
+        <td class="bordertop">1</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="t_r_t" id="foot" style="margin:-40px auto;">
+    <div class="t_r_title">
+      <table>
+        <tr>
+          <th>尾部1</th>
+          <th>尾部2</th>
+          <th>尾部3</th>
+          <th>尾部4</th>
+          <th>尾部5</th>
+          <th>尾部6</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
