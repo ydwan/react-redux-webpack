@@ -8,6 +8,7 @@
     "antd-mobile": "^0.9.12",
     "css-loader": "~0.25.0",
     "file-loader": "^0.9.0",
+    "pg-cli": "^1.0.4",
     "raw-loader": "~0.5.1",
     "react": "~15.3.2",
     "react-addons-css-transition-group": "^15.4.1",
@@ -57,7 +58,7 @@
     "bp": "APP_NAME=pmp-app APP_ENV=prod webpack --config ./webpack-config/app-prod.js --progress --display-modules",
     "sp": "APP_NAME=pmp-app APP_ENV=dev APP_TYPE=app node dev-server.js",
     "start-win:demo1": "set APP_NAME=demo1&& set APP_ENV=dev&& set APP_TYPE=app&& node dev-server.js",
-    "server-win:spa":"node src/server/simple-server.js"
+    "server-win:spa": "node src/server/simple-server.js"
   },
   "author": "zzk",
   "license": "ISC"
