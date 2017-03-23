@@ -7,7 +7,7 @@ var path = require('path');
 
 var DEV_HOST = process.env.DEV_HOST ? process.env.DEV_HOST : 'localhost';
 var devIP = DEV_HOST;
-var devPort = 3999;
+var devPort = 4999;
 if (DEV_HOST.indexOf(':') != -1) {
   var arr = DEV_HOST.split(':');
   devIP = arr[0];

@@ -24,3 +24,20 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.tips
     OWNER to postgres;
+
+-------------------------------------------------------------------数据分析的echarts图表
+CREATE TABLE public.analysis_data
+(
+    id integer NOT NULL DEFAULT nextval('analysisd_ata_id_seq'::regclass),
+    name text COLLATE pg_catalog."default",
+    money integer,
+    createtime timestamp(6) without time zone,
+    CONSTRAINT analysisd_ata_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.analysis_data
+    OWNER to postgres;

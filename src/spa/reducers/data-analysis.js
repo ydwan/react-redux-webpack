@@ -10,7 +10,7 @@
 
 function getInitialState() {
   return {
-    tips: []
+    analysis: []
   };
 }
 
@@ -23,18 +23,9 @@ function getInitialState() {
 export default (state = getInitialState(), action) => {
   var payload = action.payload;
   switch (action.type) {
-    case 'GET_ITEMS':
-      var tips = payload.tips;
-      return { ...state, tips };
-    case 'ADD_ITEM':
-      var tips = payload.tips;
-      return { ...state, tips };
-    case 'DELETE_ITEMS':
-      var tips = payload.tips;
-      return { ...state, tips };
-    case 'EDIT_ITEM':
-      var tips = payload.tips;
-      return { ...state, tips };
+    case 'GET_DATA':
+      var analysis = payload.analysis;
+      return { ...state, analysis };
     default:
       return state;
   }

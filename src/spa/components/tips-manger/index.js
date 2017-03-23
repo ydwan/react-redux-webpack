@@ -61,7 +61,7 @@ class TipsManger extends React.Component {
   }
 
   render() {
-    var {tips} = this.props.tipsManger;
+    var { tips } = this.props.tipsManger;
     var isEdit = this.state.isEdit;
     var editTools;
     if (!isEdit) {
@@ -85,9 +85,10 @@ class TipsManger extends React.Component {
   }
 }
 
-export default connect(state => ({
-  tipsManger: state.tipsManger,
-  common: state.common
-}),
+export default connect(
+  state => ({
+    tipsManger: state.tipsManger,
+    common: state.common
+  }),
   dispatch => ({ actions: bindActionCreators(tipsAction, dispatch) })
 )(TipsManger)

@@ -28,7 +28,7 @@ var webpackConfig = {
   devtool: 'eval',
   //参见 https://gaearon.github.io/react-hot-loader/getstarted/,
   entry: [
-    'webpack-dev-server/client?http://'+DEV_HOST+':3999',
+    'webpack-dev-server/client?http://'+DEV_HOST+':4999',
     'webpack/hot/only-dev-server',
     path.join(__dirname,'../src/spa/main.js')
   ],

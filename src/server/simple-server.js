@@ -33,7 +33,7 @@ require('http').createServer((req, res) => {
     switch (url) {
       case '/save-tip':
         if (requestBody) {
-          var {tip} = JSON.parse(requestBody);
+          var { tip } = JSON.parse(requestBody);
           pgHelper.insert('tips', { title: tip.title, content: tip.content }, (err, reply) => {
             pgHelper.select('tips', { id: { '$gt': 0 } }, [], (err, reply) => {
               res.end(JSON.stringify({ data: reply.rows }));
@@ -43,7 +43,7 @@ require('http').createServer((req, res) => {
         break;
       case '/edit-tip':
         if (requestBody) {
-          var {tip} = JSON.parse(requestBody);
+          var { tip } = JSON.parse(requestBody);
           pgHelper.update('tips', { id: tip.id }, { content: tip.content, title: tip.title }, (err, reply) => {
             pgHelper.select('tips', { id: { '$gt': 0 } }, [], (err, reply) => {
               res.end(JSON.stringify({ data: reply.rows }));
@@ -68,8 +68,38 @@ require('http').createServer((req, res) => {
           res.end(JSON.stringify({ data: reply.rows }));
         });
         break;
-      case '/get-users':
-        res.end(JSON.stringify({ data: users }));
+      case '/getAnalysisData':
+        if (requestBody) {
+          var request = JSON.parse(requestBody);
+          var size = requestBody.size | 10;
+          //通过$1进行占位，query第二个参数为SqlParameter
+          var sql = 'SELECT * FROM analysis_data WHERE id > (SELECT MAX(id) FROM analysis_data) - $1';
+          pgHelper.query(sql, [size * 4], (err, reply) => {
+            var rows = reply.rows || [];
+            var names = [];
+            rows.map(function (item) {
+              if (names.indexOf(item.name) < 0) names.push(item.name);
+            });
+            var result = names.map(function (name) {
+              models = [];
+              rows.forEach(function (row) {
+                if (row.name == name) {
+                  models.push(row);
+                }
+              })
+              return { name: name, values: models }
+            });
+            res.end(JSON.stringify({ data: result }));
+          });
+        }
+        break;
+      case '/addAnalysisData':
+        if (requestBody) {
+          var request = JSON.parse(requestBody) || [];
+          pgHelper.insertBatch('analysis_data', request, (err, reply) => {
+            res.end(JSON.stringify({ data: reply.rows }));
+          });
+        }
         break;
       default:
         res.writeHead(404);

@@ -24,21 +24,23 @@ class NavMenu extends Component {
       <div className="left-nav" id="leftMenu">
         <Menu theme="dark" style={{ width: 200 }} mode="inline">
 
-          <SubMenu key="sub1" title={<span className=''><Icon type="link" />图书管理</span>}>
+          <SubMenu key="sub1" title={<span className=''><Icon type="link" />tips管理</span>}>
             <Menu.Item key="sub1-1">
-              <Link to="/book/list">
+              <Link to="/">
                 <span className=""
-                  style={{ color: curPath == '/book/list' ? '#30b9ff' : 'white' }}>
-                  <Icon type="bars" />图书列表
+                  style={{ color: curPath == '/' ? '#30b9ff' : 'white' }}>
+                  <Icon type="bars" />tips列表
                 </span>
               </Link>
             </Menu.Item>
           </SubMenu>
 
-          <SubMenu key="sub3" title={<span className=''><Icon type="edit" />系统管理</span>}>
+          <SubMenu key="sub3" title={<span className=''><Icon type="edit" />数据统计</span>}>
             <Menu.Item key="sub3-1">
-              <Link to="/manger-user">
-                <span className="" ><Icon type="user" />用户管理</span>
+              <Link to="/bar">
+                <span className=""
+                  style={{ color: curPath == '/bar' ? '#30b9ff' : 'white' }}>
+                  <Icon type="bar-chart" />柱形图查看</span>
               </Link>
             </Menu.Item>
             <Menu.Item key="sub3-2">

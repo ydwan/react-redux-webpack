@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer, routerActions, routerMiddleware } from 'react-router-redux';
-import { App, TipsManger } from './components/index';
+import { App, TipsManger, DataAnalysis } from './components/index';
 import { store, DevTools } from './store/index';
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -33,7 +33,7 @@ render(
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={TipsManger} onEnter={checkToken} />
-          {/*<Route path='book-page' component={BookPage} onEnter={checkToken} />*/}
+          <Route path='/bar' component={DataAnalysis} onEnter={checkToken} />
         </Route>
       </Router>
       {DevTools}
